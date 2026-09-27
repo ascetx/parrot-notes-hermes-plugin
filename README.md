@@ -1,6 +1,6 @@
 # ParrotNotes for Hermes Agent
 
-Work with your [ParrotNotes](https://parrotnotes.app) recordings of in-person meetings and your notes from inside Hermes. Ask for your latest meeting, search a transcript, pull out action items, or save a summary back to the note.
+Work with your [ParrotNotes](https://parrotnotes.app) in-person meeting notes from inside Hermes. Ask for your latest meeting, search a transcript, pull out action items, or save a summary back to the note.
 
 ParrotNotes is an AI note-taker for in-person meetings. It records in the background on iOS, Android and macOS with no meeting bot, then turns each conversation into a transcript, summary and action items.
 
@@ -42,7 +42,7 @@ On a headless host, see Hermes' [OAuth over SSH guide](https://hermes-agent.nous
 
 ## Try it
 
-- "Summarize my most recent ParrotNotes recording and list the action items."
+- "Summarize my most recent ParrotNotes meeting notes and list the action items."
 - "Find my notes from the Henderson site visit and give me the key points."
 - "What did the client commit to on Tuesday's call? Save that back as action items."
 - "List everything I've labelled project-alpha."
@@ -53,7 +53,7 @@ Hermes exposes each tool as `mcp__parrotnotes__<tool>`.
 
 | Tool | What it does | Access |
 |---|---|---|
-| `get_recent_notes` | Lists recent notes and recordings, with pagination and an audio/text filter | Read |
+| `get_recent_notes` | Lists your most recent notes, with pagination and an audio/text filter | Read |
 | `search_notes` | Full-text search across titles, transcripts and text | Read |
 | `get_note` | Returns one note with its full transcript and content | Read |
 | `get_note_insights` | Returns insights saved against a note: summaries, action items, sentiment | Read |
@@ -68,7 +68,7 @@ Eight of the nine tools are read-only. `save_note_insight` is the only one that 
 ## Requirements
 
 - A ParrotNotes account. The free tier works.
-- At least one note or recording, made in the ParrotNotes app. This plugin reads your existing library and cannot create recordings.
+- At least one note, made in the ParrotNotes app. This plugin reads your existing notes and cannot create new ones.
 
 ## Privacy and security
 

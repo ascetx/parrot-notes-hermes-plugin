@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "parrotnotes",
   "version": "1.0.0",
-  "description": "Find, read, summarize and save insights for your ParrotNotes recordings of in-person meetings and your written notes through the hosted ParrotNotes MCP server, with the parrotnotes workflow skill bundled.",
+  "description": "Find, read, summarize and save insights for your ParrotNotes in-person meeting notes through the hosted ParrotNotes MCP server, with the parrotnotes workflow skill bundled.",
   "author": {
     "name": "Ascetx",
     "email": "support@parrotnotes.app",
@@ -17,7 +17,6 @@
     "meetings",
     "in-person-meetings",
     "transcripts",
-    "voice-notes",
     "action-items",
     "productivity",
     "mcp"
