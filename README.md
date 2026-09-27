@@ -110,3 +110,7 @@ Eight of the nine tools are read-only. `save_note_insight` is the only one that 
 - Email: support@parrotnotes.app
 - Setup for other clients: https://parrotnotes.app/docs/mcp
 - Terms: https://parrotnotes.app/terms
+
+## License
+
+This repository (plugin manifests, skill and docs) is MIT licensed. The hosted ParrotNotes service and MCP server are separate and governed by the [ParrotNotes terms](https://parrotnotes.app/terms).

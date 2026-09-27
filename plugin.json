@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "parrotnotes",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Find, read, summarize and save insights for your ParrotNotes in-person meeting notes through the hosted ParrotNotes MCP server, with the parrotnotes workflow skill bundled.",
   "author": {
     "name": "ParrotNotes",
@@ -10,7 +10,7 @@
   },
   "homepage": "https://parrotnotes.app/docs/mcp",
   "repository": "https://github.com/ascetx/parrot-notes-hermes-plugin",
-  "license": "Proprietary",
+  "license": "MIT",
   "keywords": [
     "parrotnotes",
     "notes",

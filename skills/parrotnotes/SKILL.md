@@ -1,9 +1,9 @@
 ---
 name: parrotnotes
 description: Find, read, summarize, and save insights for the user's ParrotNotes in-person meeting notes through the ParrotNotes MCP connector. Use when the user mentions ParrotNotes, their meetings, meeting notes, transcripts, voice notes, or note labels, or asks to summarize, extract action items from, translate, or repurpose a meeting they captured. Do not use for notes stored in other apps or for general writing that does not involve the user's ParrotNotes data.
-version: 1.1.0
+version: 1.2.0
 author: ParrotNotes
-license: Proprietary
+license: MIT
 compatibility: Requires the ParrotNotes MCP connector at https://mcp.parrotnotes.app/mcp and a ParrotNotes account. Needs network access.
 metadata:
   tags: "Productivity, Notes, Meetings, Transcripts, Action items"
