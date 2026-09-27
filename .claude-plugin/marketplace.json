@@ -8,14 +8,14 @@
   },
   "metadata": {
     "description": "ParrotNotes plugins: work with your in-person meeting notes from your AI agent.",
-    "version": "1.2.0"
+    "version": "1.2.1"
   },
   "plugins": [
     {
       "name": "parrotnotes",
       "source": "./",
       "description": "Find, search, summarize and save insights on your ParrotNotes in-person meeting notes.",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "category": "productivity"
     }
   ]
