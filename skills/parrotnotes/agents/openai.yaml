@@ -1,7 +1,7 @@
 interface:
   display_name: "ParrotNotes"
-  short_description: "Find, summarize, and save insights for your ParrotNotes recordings and notes"
-  default_prompt: "Summarize my most recent ParrotNotes recording and list the action items"
+  short_description: "Find, summarize, and save insights for your ParrotNotes in-person meeting notes"
+  default_prompt: "Summarize my most recent ParrotNotes meeting notes and list the action items"
 
 policy:
   allow_implicit_invocation: true
@@ -10,6 +10,6 @@ dependencies:
   tools:
     - type: "mcp"
       value: "parrotnotes"
-      description: "ParrotNotes connector for the user's notes, recordings, labels, and insights"
+      description: "ParrotNotes connector for the user's in-person meeting notes, labels, and insights"
       transport: "streamable_http"
       url: "https://mcp.parrotnotes.app/mcp"

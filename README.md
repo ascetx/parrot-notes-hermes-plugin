@@ -1,31 +1,24 @@
-# ParrotNotes for Hermes Agent
+# ParrotNotes plugin for AI agents
 
-Work with your [ParrotNotes](https://parrotnotes.app) in-person meeting notes from inside Hermes. Ask for your latest meeting, search a transcript, pull out action items, or save a summary back to the note.
+Work with your [ParrotNotes](https://parrotnotes.app) in-person meeting notes from inside your AI agent. Ask for your latest meeting, search a transcript, pull out action items, or save a summary back to the note.
 
 ParrotNotes is an AI note-taker for in-person meetings. It records in the background on iOS, Android and macOS with no meeting bot, then turns each conversation into a transcript, summary and action items.
 
-This is a portable [Agent Plugins v1](https://agent-plugins.org) package. One install ships:
+One install ships:
 
-- `mcp.json`, the hosted ParrotNotes MCP server (`parrotnotes`) at `https://mcp.parrotnotes.app/mcp`, over Streamable HTTP.
+- The hosted ParrotNotes MCP server (`parrotnotes`) at `https://mcp.parrotnotes.app/mcp`, over Streamable HTTP.
 - `skills/parrotnotes/`, the workflow skill: how to find the right note, which of the two note IDs each tool takes, when to reuse a saved insight, and when to ask before overwriting one.
 
-## Install
+ParrotNotes signs in with OAuth 2.0 and Dynamic Client Registration. There is no API key, and nothing secret lives in this repository. On first use your agent opens `https://parrotnotes.app/auth/authorize` in the browser: sign in and approve access.
+
+## Hermes Agent
 
 ```bash
 hermes plugins install parrotnotes          # from the Hermes plugin catalog
 hermes plugins enable parrotnotes
 ```
 
-Before the catalog listing is live, install straight from GitHub:
-
-```bash
-hermes plugins install ascetx/parrot-notes-hermes-plugin --no-enable
-hermes plugins enable parrotnotes
-```
-
-## Sign in
-
-ParrotNotes uses OAuth 2.0 with Dynamic Client Registration. There is no API key, and nothing secret lives in this repository.
+Before the catalog listing is live, install straight from GitHub with `hermes plugins install ascetx/parrot-notes-hermes-plugin --no-enable`, then enable it the same way.
 
 The Agent Plugins v1 `mcp.json` format has no field for OAuth, so tell Hermes once that this server signs in with OAuth:
 
@@ -34,11 +27,37 @@ hermes mcp add parrotnotes --url https://mcp.parrotnotes.app/mcp --auth oauth
 hermes mcp login parrotnotes
 ```
 
-Hermes opens `https://parrotnotes.app/auth/authorize` in your browser. Sign in, approve access, then start a new Hermes session. Tokens are cached under `~/.hermes/mcp-tokens/` and refresh on their own.
+Start a new Hermes session afterwards. Tokens are cached under `~/.hermes/mcp-tokens/` and refresh on their own. Your `config.yaml` entry and the plugin's `mcp.json` entry share the name `parrotnotes`, and the config entry wins. The plugin still supplies the skill. On a headless host, see Hermes' [OAuth over SSH guide](https://hermes-agent.nousresearch.com/docs/guides/oauth-over-ssh#mcp-servers).
 
-Your `config.yaml` entry and the plugin's `mcp.json` entry share the name `parrotnotes`, and the config entry wins. The plugin still supplies the skill.
+## Claude Code
 
-On a headless host, see Hermes' [OAuth over SSH guide](https://hermes-agent.nousresearch.com/docs/guides/oauth-over-ssh#mcp-servers).
+```bash
+claude plugin marketplace add ascetx/parrot-notes-hermes-plugin
+claude plugin install parrotnotes@parrotnotes
+```
+
+Or inside a session: `/plugin marketplace add ascetx/parrot-notes-hermes-plugin`, then `/plugin install parrotnotes@parrotnotes`. Claude Code runs the OAuth sign-in the first time a ParrotNotes tool is used, or run `/mcp` to sign in straight away.
+
+On claude.ai and the Claude apps, add ParrotNotes from the [Claude directory](https://claude.ai/directory/parrotnotes) instead.
+
+## Codex
+
+```bash
+codex plugin marketplace add ascetx/parrot-notes-hermes-plugin
+codex plugin add parrotnotes@parrotnotes
+codex mcp login parrotnotes
+```
+
+## GitHub Copilot CLI
+
+```bash
+copilot plugin marketplace add ascetx/parrot-notes-hermes-plugin
+copilot plugin install parrotnotes@parrotnotes
+```
+
+## Any other MCP client
+
+Add `https://mcp.parrotnotes.app/mcp` as a remote (Streamable HTTP) MCP server with OAuth. It is listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=app.parrotnotes) as `app.parrotnotes/parrotnotes`. To add only the skill to an Agent Skills client, run `npx skills add ascetx/parrot-notes-hermes-plugin`. Per-client setup: https://parrotnotes.app/docs/mcp
 
 ## Try it
 
